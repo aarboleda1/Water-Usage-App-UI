@@ -7,7 +7,6 @@ function ProjectController($scope, DataService, $window) {
   (function retrieveProjects () {
     DataService.getProjects()
       .then((response) => {
-        console.log(response.data.results);
         $scope.list = response.data.results;
       });
 

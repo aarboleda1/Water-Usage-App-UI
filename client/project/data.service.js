@@ -19,7 +19,6 @@ function DataService($http, $window) {
     var token = _getLocalToken();
     
     var url = `https://iotile.cloud/api/v1/stream/?project=${id}`;
-    console.log(id, 'should be the stuff');
     return $http.get(url, {headers: {     
       'Authorization': 'JWT ' +  token,
       'Content-Type': 'application/json'               
