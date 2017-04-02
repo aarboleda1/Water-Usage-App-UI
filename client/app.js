@@ -23,6 +23,10 @@ function AppConfig($routeProvider) {
       templateUrl: 'project/project.html',
       controller: 'ProjectController'
     })
+    .when('/', {
+      templateUrl: 'index.html',
+      controller: 'ProjectController'
+    })
     .otherwise({
       redirectTo: '/index.html'
     });

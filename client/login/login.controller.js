@@ -6,7 +6,7 @@ function LoginController ($scope, $window, $location, AuthService) {
       .then(function (token) {
         $window.localStorage.setItem('com.archSystems', token);
         console.log($window.localStorage, ' toekn should be set!');
-        $location.path('/projects');
+        $location.path('/');
       })
       .catch(function (error) {
         console.error(error);

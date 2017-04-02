@@ -6,6 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
         <script src="./bower_components/json-formatter/dist/json-formatter.js"></script>
         <link rel="stylesheet" type="text/css" href="./bower_components/json-formatter/dist/json-formatter.css">
+        <link rel="import" href="./bower_components/json-formatter/src/json-formatter.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
    
     </head>
@@ -18,7 +19,6 @@
             <ul>
                 <li ng-repeat="proj in list">
                     <a ng-click="project.clickHandler(proj)">{{proj.name}}</a>
-                    <p>{{proj.id}}</p>
                 </li>
             </ul>
             
