@@ -2,7 +2,8 @@ function LoginController ($scope, $window, $location, AuthService) {
   $scope.user = {};
 
   $scope.login = function () {
-    Auth.signin($scope.user)
+    console.log('hello')
+    AuthService.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.archSystems', token);
         // $location.path('/links');

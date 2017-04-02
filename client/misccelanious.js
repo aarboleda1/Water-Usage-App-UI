@@ -19,18 +19,19 @@
         <json-formatter open="1" json="data1"></json-formatter>
         <login></login>
         </div>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
         <script src="https://code.angularjs.org/1.4.5/angular-route.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>        
-        <script src="../bower_components/angular-json-tree/dist/angular-json-tree.min.js"></script>
         <script src="app.js"></script>  
 
         <script src="./login/login.controller.js"></script>
         <script src="./login/auth.service.js"></script>
         <script src="./login/login.directive.js"></script>
+
         <script src="./project/data.service.js"></script>
         <script src="./project/project.controller.js"></script>
         <script src="./project/project.directive.js"></script>
