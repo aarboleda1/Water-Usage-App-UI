@@ -14,8 +14,7 @@ function ProjectController($scope, DataService, $window) {
   })();
 
   this.clickHandler = function (project) {
-    var token = $window.localStorage.getItem('com.archSystems');
-    console.log(token,' token');
+
     $scope.selectedProject = project;
     var {id, name} = project;
     $scope.projectName = name;
@@ -27,7 +26,6 @@ function ProjectController($scope, DataService, $window) {
   };
 
   this.setSelected = function (stream) {
-    console.log(stream);
     $scope.selectedStream = stream;
   };
  
