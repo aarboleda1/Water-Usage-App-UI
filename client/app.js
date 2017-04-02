@@ -16,35 +16,18 @@ angular
 function AppConfig($routeProvider) {
   $routeProvider
     .when('/login', {
-      templateUrl: 'login.html'
+      templateUrl: 'login/login.html',
+      controller: 'LoginController'
+    })
+    .when('/projects', {
+      templateUrl: 'project/project.html',
+      controller: 'ProjectController'
     })
     .otherwise({
       redirectTo: '/index.html'
     });
 }
 
-// Configure app Routes
-// function AppConfig($routeProvider, $stateProvider, $urlRouterProvider){
-//   // $urlRouterProvider.otherwise("/login");
-//   // $stateProvider
-//     // .state('dashboard', {
-//     //   url: '/dashboard',
-//     //   templateUrl: 'scripts/dashboard/dashboard.tpl.html',
-//     //   controller: 'DashboardCtrl'
-//     // })
-//   // $stateProvider
-//   //   .state('projectss', {
-//   //     url: '/projects',
-//   //     templateUrl: 'client/project/project.html',
-//   //     controller: 'ProjectCtrl'
-//   //   });
-//   // $routeProvider
-//     // .when('/login', {
-//     //   templateUrl: 'login/login.html',
-//     //   controller: 'AuthController'
-//     // })  
-
-// }
 
 // Remove template caches
 function AppRun($rootScope, $templateCache){

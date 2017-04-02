@@ -2,16 +2,17 @@ function LoginController ($scope, $window, $location, AuthService) {
   $scope.user = {};
 
   $scope.login = function () {
-    console.log('hello')
-    AuthService.signin($scope.user)
+    AuthService.login($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.archSystems', token);
-        // $location.path('/links');
+        console.log($window.localStorage, ' toekn should be set!');
+        $location.path('/projects');
       })
       .catch(function (error) {
         console.error(error);
       });
   };
+
  
 }
 angular.module('myApp')
