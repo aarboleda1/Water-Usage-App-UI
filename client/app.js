@@ -4,7 +4,7 @@
 angular
   .module('myApp', [
     'ngRoute',
-    'jsonFormatter',
+    'jsonFormatter'
   ])
   .config(AppConfig)
   .run([
@@ -31,11 +31,15 @@ function AppConfig($routeProvider) {
 
 // Remove template caches
 function AppRun($rootScope, $templateCache){
- $rootScope.$on('$viewContentLoaded', function() {
-    $templateCache.removeAll();
- });
+  $rootScope.$on('$routeChangeStart', function (evt, next, current) {
+    if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
+      $location.path('/login');
+    }
+  });
 }
 
 })();
+
+
 
 

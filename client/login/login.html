@@ -1,9 +1,12 @@
+<h2>Login</h2>
 <form name="loginForm" ng-controller="LoginController" novalidate>
-  <label for="username">Username:</label>
-  <input type="text" id="username"
-         ng-model="user.username">
-  <label for="password">Password:</label>
-  <input type="password" id="password"
-         ng-model="user.password">
-  <button type="submit" ng-click="login()">Login</button>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Username" id="username" ng-model="user.username" aria-describedby="basic-addon2">
+    <span class="input-group-addon" id="basic-addon2">@example.com</span>
+  </div>
+  <div class="input-group">
+    <input type="password" class="form-control"placeholder="Password" id="password" ng-model="user.password">
+    <button type="submit" ng-click="login()">Login</button>
+  </div>
 </form>
+

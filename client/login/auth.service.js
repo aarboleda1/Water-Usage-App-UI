@@ -12,10 +12,12 @@ function AuthService ($http) {
       return resp.data.token;
     });
   };
+
+  this.isAuth = function () {
+    return !!$window.localStorage.getItem('com.archSystems');
+  };  
 }
 
 angular.module('myApp')
   .service('AuthService', AuthService);
 
-// User: user1@test.com
-// Password: user.1
