@@ -3,29 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <title>WaterVisualizationArchSystems</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
         <script src="./bower_components/json-formatter/dist/json-formatter.js"></script>
         <link rel="stylesheet" type="text/css" href="./bower_components/json-formatter/dist/json-formatter.css">
-        <link rel="import" href="./bower_components/json-formatter/src/json-formatter.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-   
+        <link rel="import" href="./bower_components/json-formatter/dist/json-formatter.css">
+        
     </head>
     
     <body ng-app="myApp" class="container">
-    <div ng-view></div> 
-        <h2>Water Visualization Dashboard</h2>
+    <div ng-view></div>
+      <div class="page-header">
+        <h2>Water Visualization Dashboard</h2>          
+      </div> 
         <h4>Select a Project</h4>
         <div ng-controller="ProjectController as project">
-            <ul>
-                <li ng-repeat="proj in list">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="proj in list">
                     <a ng-click="project.clickHandler(proj)">{{proj.name}}</a>
                 </li>
             </ul>
             
             <h4>Streams</h4>
             <h3 ng-if="streams" ng-show="selectedProject == proj">{{projectName}} Streams</h3>
-                <ul ng-if="streams">
-                    <li ng-repeat="stream in streams track by $index">
+                <ul ng-if="streams" class="list-group">
+                    <li class="list-group-item" ng-repeat="stream in streams track by $index">
                         <a ng-click="project.setSelected(stream)">{{projectName}} streams</a>
                         <json-formatter  open="1" json="selectedStream" ng-show="selectedStream == stream"></json-formatter>
                     </li> 

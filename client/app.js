@@ -3,8 +3,8 @@
 
 angular
   .module('myApp', [
+    'ngRoute',
     'jsonFormatter',
-    'ngRoute'
   ])
   .config(AppConfig)
   .run([
@@ -19,17 +19,13 @@ function AppConfig($routeProvider) {
       templateUrl: 'login/login.html',
       controller: 'LoginController'
     })
-    .when('/projects', {
-      templateUrl: 'project/project.html',
-      controller: 'ProjectController'
-    })
-    .when('/', {
-      templateUrl: 'index.html',
-      controller: 'ProjectController'
-    })
-    .otherwise({
-      redirectTo: '/index.html'
-    });
+    // .when('/', {
+    //   templateUrl: 'index.html',
+    //   controller: 'ProjectController'
+    // })
+    // .otherwise({
+    //   redirectTo: '/index.html'
+    // });
 }
 
 

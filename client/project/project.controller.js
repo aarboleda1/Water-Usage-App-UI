@@ -1,4 +1,4 @@
-function ProjectController($scope, DataService) {
+function ProjectController($scope, DataService, $window) {
   $scope.list;
   $scope.streams;
   $scope.projectName;
@@ -14,6 +14,8 @@ function ProjectController($scope, DataService) {
   })();
 
   this.clickHandler = function (project) {
+    var token = $window.localStorage.getItem('com.archSystems');
+    console.log(token,' token');
     $scope.selectedProject = project;
     var {id, name} = project;
     $scope.projectName = name;
@@ -32,5 +34,5 @@ function ProjectController($scope, DataService) {
 }
 angular.module('myApp')
   .controller('ProjectController', 
-    ['$scope', 'DataService', ProjectController]
+    ['$scope', 'DataService', '$window', ProjectController]
   );
