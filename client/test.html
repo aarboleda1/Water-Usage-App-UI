@@ -1,0 +1,13 @@
+        <pre><json-tree object="data1 | json" start-expanded="true" root-name="'Project'"></json-tree></pre>
+
+
+
+<div ng-controller="ProjectCtrl as proj">
+  <h2>Projects</h2>
+  <ul class="project-list">
+    <li ng-repeat="let project in projects">
+      {{project.name}}
+    </li>
+  </ul>
+</div>
+            <json-formatter open="1" json="stream" ng-if="stream"></json-formatter>

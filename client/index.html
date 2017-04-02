@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   
+        <script src="../bower_components/json-formatter/dist/json-formatter.js"></script>
+        <script src="../bower_components/angular-json-tree/dist/angular-json-tree.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="../bower_components/json-formatter/dist/json-formatter.css">
+        <link rel="stylesheet" type="text/css" href="../bower_components/angular-json-tree/dist/angular-json-tree.css">        
+    </head>
+    
+
+
+    <body ng-app="myApp" class="container">
+        <h2>Water Visualization Dashboard</h2>
+        <div ng-controller="ProjectController as project">
+            <ul>
+                <li ng-repeat="proj in list">
+                    <a ng-click="project.clickHandler(proj)">{{proj.name}}</a>
+                    <p>{{proj.id}}</p>
+                </li>
+            </ul>
+            <h3 ng-if="streams" ng-show="selectedProject == proj">{{projectName}} Streams</h3>
+                <ul ng-if="streams">
+                    <li ng-repeat="stream in streams track by $index">
+                        <a ng-click="project.setSelected(stream)">{{projectName}} streams</a>
+                        <json-formatter  open="1" json="selectedStream" ng-show="selectedStream == stream"></json-formatter>
+                    </li> 
+                </ul>
+            <div>
+            </div>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+        <script src="https://code.angularjs.org/1.4.5/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>        
+        <script src="app.js"></script>  
+
+        <script src="./login/login.controller.js"></script>
+        <script src="./login/auth.service.js"></script>
+        <script src="./login/login.directive.js"></script>
+        <script src="./project/data.service.js"></script>
+        <script src="./project/project.controller.js"></script>
+        <script src="./project/project.directive.js"></script>
+
+
+
+
+
+
+
+    </body>
+</html>
