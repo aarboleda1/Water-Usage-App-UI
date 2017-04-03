@@ -4,10 +4,12 @@ function DataService($http, $window) {
   var token = _getLocalToken();
 
   headers['Authorization'] = 'JWT ' + token;
-  
+
   var projectsUrl = 'https://iotile.cloud/api/v1/project/';
   this.getProjects = function() {
-    return $http.get(projectsUrl, {headers: headers});
+    return $http.get(projectsUrl, {
+      headers: headers
+    });
   };
 
   function _getLocalToken() {
@@ -17,20 +19,18 @@ function DataService($http, $window) {
 
   this.getStream = function(id) {
     var token = _getLocalToken();
-    
+
     var url = `https://iotile.cloud/api/v1/stream/?project=${id}`;
-    return $http.get(url, {headers: {     
-      'Authorization': 'JWT ' +  token,
-      'Content-Type': 'application/json'               
-    }});
-  };  
-  
+    return $http.get(url, {
+      headers: {
+        'Authorization': 'JWT ' + token,
+        'Content-Type': 'application/json'
+      }
+    });
+  };
+
 }
 
 angular
   .module('myApp')
   .service('DataService', DataService);
-
-
-
-

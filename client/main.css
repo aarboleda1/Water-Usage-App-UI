@@ -3,3 +3,19 @@
   flex-direction: row;
   justify-content: center;
 }
+
+#invalid-login{
+  color: red;
+}
+
+#login-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.input-group{
+width: 12 0%
+}
