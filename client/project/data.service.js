@@ -1,11 +1,11 @@
 function DataService($http, $window) {
-  var headers = {};
-  headers['Content-Type'] = 'application/json';
-  var token = _getLocalToken();
-
-  headers['Authorization'] = 'JWT ' + token;
-
-  var projectsUrl = 'https://iotile.cloud/api/v1/project/';
+  var token = _getLocalToken(),
+      projectsUrl = 'https://iotile.cloud/api/v1/project/';
+      headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'JWT ' + token
+      };
+      
   this.getProjects = function() {
     return $http.get(projectsUrl, {
       headers: headers
