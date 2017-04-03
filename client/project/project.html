@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h2>Water Visualization Dashboard</h2>          
+</div> 
+<h4>Select a Project</h4>
+  <div ng-controller="ProjectController as project">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="proj in list">
+            <a ng-click="project.clickHandler(proj)">{{proj.name}}</a>
+        </li>
+  </ul>
+      
+      <h4>Streams</h4>
+      <h3 ng-if="streams" ng-show="selectedProject == proj">{{projectName}} Streams</h3>
+          <ul ng-if="streams" class="list-group">
+              <li class="list-group-item" ng-repeat="stream in streams track by $index">
+                  <a ng-click="project.setSelected(stream)">{{projectName}} streams</a>
+                  <json-formatter  open="1" json="selectedStream" ng-show="selectedStream == stream"></json-formatter>
+              </li> 
+          </ul>
+      <div>
+      </div>
+  </div>
