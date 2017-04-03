@@ -1,20 +1,20 @@
-function LoginController ($scope, $window, $location, AuthService) {
+function LoginController($scope, $window, $location, AuthService) {
   $scope.user = {};
-
-  $scope.login = function () {
+  $scope.badLogin = false;
+  $scope.login = function() {
     AuthService.login($scope.user)
-      .then(function (token) {
+      .then(function(token) {
         $window.localStorage.setItem('com.archSystems', token);
-        $location.path('/');
+        $location.path('/projects');
       })
-      .catch(function (error) {
+      .catch(function(error) {
+        $scope.badLogin = true;
+        $scope.user = {}
         console.error(error);
       });
   };
 
- 
+
 }
 angular.module('myApp')
   .controller('LoginController', LoginController);
-
-

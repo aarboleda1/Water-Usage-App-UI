@@ -1,21 +1,21 @@
-function AuthService ($http) {
-  this.login = function (user) {
+function AuthService($http) {
+  this.login = function(user) {
     return $http({
-      method: 'POST',
-      url: 'https://iotile.cloud/api/v1/auth/api-jwt-auth/',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: user
-    })
-    .then(function (resp) {
-      return resp.data.token;
-    });
+        method: 'POST',
+        url: 'https://iotile.cloud/api/v1/auth/api-jwt-auth/',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: user
+      })
+      .then(function(resp) {
+        return resp.data.token;
+      });
   };
-  
-  this.isAuth = function () {
+
+  this.isAuth = function() {
     return !!$window.localStorage.getItem('com.archSystems');
-  };  
+  };
 }
 
 angular.module('myApp')
